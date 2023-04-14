@@ -1,0 +1,14 @@
+<h1>Activities to Do:</h1>
+{% for activity in activities %}
+    <ol>
+        <li>
+            <p>{{activity.activity}} - {{activity.deadline}}
+                <ul>
+                    <li><a href="/delete/{{activity.id}}">Delete</a></li>
+                    <li><a href="/update/{{activity.id}}">Update</a></li>
+                </ul>
+            </p>
+        </li>
+    </ol>
+{% endfor %}
+<a href="{% url 'app1:addnew' %}">Add new Activity.</a>
